@@ -1,6 +1,7 @@
-{%block content%} {%for post in posts%}
+{%extends "blog/base.html"%} {%block content%} {%for post in posts%}
 <h2>
   <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
 </h2>
+<p>Comments: {{ post.comments.count }}</p>
 <p>Published {{ post.pub_date }} by {{ post.author }}</p>
 {%endfor%} {%endblock%}
