@@ -1,0 +1,43 @@
+.navbar {
+  background-color: rgb(41, 31, 10);
+  display: flex;
+}
+.left-nav,
+.right-nav {
+  display: flex;
+}
+
+.nav-link {
+  color: #fff;
+}
+.nav-link:hover {
+  scale: 2;
+  color: rgb(118, 173, 177);
+}
+#content {
+  padding-left: 3rem;
+}
+#content::before {
+  content: "";
+  display: block;
+  margin: 15px;
+}
+.author {
+  text-transform: capitalize;
+}
+.post-content {
+  padding-left: 1rem;
+}
+@media all and(max-width:800px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+}
+@media all and (max-width: 550px) {
+  .navbar,
+  .left-nav,
+  .right-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}

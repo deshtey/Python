@@ -1,9 +1,13 @@
 {%extends "blog/base.html"%} {%block content%}
 <h1>{{ post.title }}</h1>
-<p>{{ post.body }}</p>
-<p>Published {{ post.pub_date }} by {{ post.author }}</p>
+<hr />
+<p>
+  <span class="author">{{ post.author }}</span> {{ post.pub_date }}
+</p>
+<p class="post-content">{{ post.body }}</p>
+<hr />
 {% with comments.count as total_comments %}
-<h2>{{ total_comments }} comment{{ total_comments | pluralize }}</h2>
+<h6>{{ total_comments }} comment{{ total_comments | pluralize }}</h6>
 {% endwith %} {% for comment in comments %}
 <div class="comment">
   <p class="info">

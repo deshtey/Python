@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}" />
   </head>
   <body>
-    <div id="content">{% block content %} {% endblock %}</div>
-    <div id="sidebar"></div>
+    <nav class="navbar">
+      <div class="left-nav">
+        <a class="nav-link active" href="{% url 'blog'%}">Blog</a>
+        <a class="nav-link" href="#">All Threads</a>
+        <a class="nav-link" href="#">Popular</a>
+      </div>
+      <div class="right-nav">
+        <a class="nav-link" href="#">Sign Up</a>
+        <a class="nav-link" href="#">Sign In</a>
+      </div>
+    </nav>
+    <div class="Container">
+      <div class="row">
+        <div class="col-9" id="content">
+          {% block content %} {% endblock %}
+        </div>
+        <div class="col-3 sidebar">gfdgfd</div>
+      </div>
+    </div>
   </body>
 </html>
