@@ -22,7 +22,7 @@
 {%else%}
 <h2>Add a new comment</h2>
 <form method="POST">
-  {{ comment_form.as_p }} {%csrf_token%}
+  {{ comment_form.as_table }} {%csrf_token%}
   <p><input type="submit" value="add comment" /></p>
 </form>
 {%endif%} {%endblock%}
